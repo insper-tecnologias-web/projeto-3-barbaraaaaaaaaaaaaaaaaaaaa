@@ -10,4 +10,4 @@ Funcionalidades:
 - Tags multiplas nos posts
 - CRUD no django dos comentarios
 
-- [x] #739
+- [ ] #739
