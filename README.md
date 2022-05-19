@@ -7,6 +7,6 @@ Funcionalidades:
 - CRUD no django dos posts
 - Otimo CSS
 - Favoritar post
-- Tags multiplas nos posts
-- CRUD no django dos comentarios
+- Tags multiplas nos posts (extra)
+- CRUD no django dos comentarios (extra)
 
