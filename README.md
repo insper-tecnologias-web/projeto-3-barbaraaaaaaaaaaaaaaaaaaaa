@@ -1,1 +1,13 @@
-"# projeto-3-barbaraaaaaaaaaaaaaaaaaaaa" 
+# Projeto 3 de Tecnologias Web
+
+Integrantes: Pedro Andrade, Thiago Kawahara, Willian Kenzo
+
+Funcionalidades:
+- Autentização de usuários
+- CRUD no django dos posts
+- Otimo CSS
+- Favoritar post
+- Tags multiplas nos posts
+- CRUD no django dos comentarios
+
+- [x] #739
