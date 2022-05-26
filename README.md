@@ -9,6 +9,7 @@ Funcionalidades:
 - Favoritar post (1p)
 - Tags multiplas nos posts (1,5p) 
 - CRUD no django dos comentarios (1p)
+- Utilização do frameWork Next
 
 Sprint 1 (24/05 e 27/05)
   - [ ] CRUD no django dos posts
