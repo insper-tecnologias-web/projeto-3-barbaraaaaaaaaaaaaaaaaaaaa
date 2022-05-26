@@ -1,5 +1,10 @@
 # Projeto 3 de Tecnologias Web
 
+### Códigos para rodar:
+- npm install -global yarn
+- yarn install
+- npm run dev
+
 Integrantes: Pedro Andrade, Thiago Kawahara, Willian Kenzo
 
 Funcionalidades:
