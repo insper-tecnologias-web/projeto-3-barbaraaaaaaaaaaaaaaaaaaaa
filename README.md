@@ -17,14 +17,17 @@ Funcionalidades:
 - Utilização do frameWork Next
 
 Sprint 1 (24/05 e 27/05)
-  - [ ] CRUD no django dos posts
-  - [ ] CRUD no django dos comentarios
-  - [ ] Favoritar post
+  - [ ] Fazer as telas
+  - [ ] Fazer os fluxos de tela
+  - [ ] Trabalhar no css
 
 Sprint 2 (31/05 e 03/06)
   - [ ] Autentização de usuários
   - [ ] Tags multiplas nos posts
   - [ ] Otimo CSS
+  - [ ] CRUD no django dos posts
+  - [ ] CRUD no django dos comentarios
+  - [ ] Favoritar post
 
 ![fluxo de telas](https://user-images.githubusercontent.com/71990438/169356552-394c481d-466f-4b10-aba3-6d4236a38586.png)
 
