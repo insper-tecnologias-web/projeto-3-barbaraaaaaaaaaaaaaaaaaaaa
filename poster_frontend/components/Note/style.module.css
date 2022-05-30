@@ -27,14 +27,14 @@ display: flex;
 flex-direction: row;
 }
 
-.card-title{
+.card_title{
 font-size: 1.5rem;
 width: 100%;
 margin-bottom: 1rem;
 font-weight: bolder;
 }
 
-.card-content {
+.card_content {
 display: flex;
 flex-direction: column;
 align-items: space-evenly;
@@ -43,7 +43,7 @@ flex-grow: 1;
 color: #4c4c4c;
 }
 
-.card-contentG{
+.card_contentG{
 display: flex;
 justify-content: flex-start;
 justify-content: flex-start;

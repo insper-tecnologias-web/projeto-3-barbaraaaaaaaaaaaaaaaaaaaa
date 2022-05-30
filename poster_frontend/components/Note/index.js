@@ -1,11 +1,13 @@
 import ButtonWrapper from '../ButtonWrapper'
 
+import style from './style.module.css'
+
 
 export default function Note (props) {
   return (
-    <div className="style.card" >
-      <div className="style.imagem">
-        <div>
+    <div className={style.card} >
+      <div className={style.imagem}>
+        {/* <div>
         <ButtonWrapper
           setAnimationState={props.setAnimationState}
           animationState={props.animationState}
@@ -13,16 +15,16 @@ export default function Note (props) {
           defaultOptions={props.defaultOptions}
           isLiked={props.isLiked}
         ></ButtonWrapper>
-        </div>
+        </div> */}
 
-        <h3 className="card-title">{props.categoria}</h3>
+        <h3 className={style.card_title}>{props.categoria}</h3>
       </div>
-      <div class="grupo">
-        <div class="limitaNome">
-          <h3 className="card-contentG">Laureate: {props.nome}</h3>
+      <div className={style.grupo}>
+        <div className={style.limitaNome}>
+          <h3 className={style.card_contentG}>Laureate: {props.title}</h3>
         </div>
-        <h3 className="card-content">Year: {props.ano}</h3>
-        <h3 className="card-content">Prize: ${props.price}</h3>
+        <h3 className={style.card_ontent}>Year: {props.ano}</h3>
+        <h3 className={style.card_content}>Prize: ${props.price}</h3>
 
         {/* <form className="limitador">
           <input
