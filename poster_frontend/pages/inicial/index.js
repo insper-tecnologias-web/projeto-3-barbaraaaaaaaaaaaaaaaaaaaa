@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import { useState, useEffect } from 'react'
-import axios from "axios"
 
 import AppBar from '../../components/AppBar'
 import Note from '../../components/Note'
@@ -9,8 +8,7 @@ export default function inicial(props) {
   const [notes, setNotes] = useState([]) // Remova o array de notes que existia na versão anterior
   const [access_token, setToken] = useState('')
 
-  async function updateNotes () {
-    console.log(access_token);
+  async function allNotes () {
     const response = await fetch('http://localhost:8000/api/notes/all/', {
       method: 'GET',
       headers: {
@@ -20,7 +18,6 @@ export default function inicial(props) {
       }
     })
     const notes = await response.json()
-
     setNotes(notes)
     console.log(notes)
   }
@@ -31,8 +28,9 @@ export default function inicial(props) {
 
   useEffect(() => {
     if (access_token !== '')
-      updateNotes()
+      allNotes()
   }, [access_token])
+  
 
   return (
     <>
@@ -40,7 +38,7 @@ export default function inicial(props) {
         <title>Poster</title>
       </Head>
 
-      <AppBar nome= "Pedro"></AppBar>
+      <AppBar></AppBar>
       <main className="container">
         {
           notes.map((note) => (

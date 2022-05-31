@@ -7,24 +7,18 @@ export default function Note (props) {
   return (
     <div className={style.card} >
       <div className={style.imagem}>
-        {/* <div>
-        <ButtonWrapper
-          setAnimationState={props.setAnimationState}
-          animationState={props.animationState}
-          setLikeState={props.setLikeState}
-          defaultOptions={props.defaultOptions}
-          isLiked={props.isLiked}
-        ></ButtonWrapper>
-        </div> */}
+        <div>
+        <ButtonWrapper></ButtonWrapper>
+        </div>
 
         <h3 className={style.card_title}>{props.categoria}</h3>
       </div>
       <div className={style.grupo}>
         <div className={style.limitaNome}>
-          <h3 className={style.card_contentG}>Laureate: {props.title}</h3>
+          <h3 className={style.card_contentG}>{props.title}</h3>
         </div>
-        <h3 className={style.card_ontent}>Year: {props.ano}</h3>
-        <h3 className={style.card_content}>Prize: ${props.price}</h3>
+        <h3 className={style.card_ontent}>{props.ano}</h3>
+        <h3 className={style.card_content}>{props.price}</h3>
 
         {/* <form className="limitador">
           <input

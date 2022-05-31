@@ -1,13 +1,15 @@
-import Head from 'next/head';
-import { useState } from 'react';
-
-// import Note from '../components/Note';
+import { useEffect, useState } from 'react';
 
 import styles from './Style.module.css'
 
 
 export default function AppBar(props) {
+  const [name, setName] = useState('');
 
+  useEffect(() => {
+    setName(localStorage.getItem('user'))
+  }, [])
+  
   return (
     <>
     <div className={styles.appbar}>
@@ -18,7 +20,7 @@ export default function AppBar(props) {
                 <a href='/Likes'>Likes</a>
                 <a href='/Postes'>Seus postes</a>
             </div>
-        <h2 className={styles.nome}>{props.nome}</h2>
+        <h2 className={styles.nome}>{name}</h2>
     </div>
     </>
   )

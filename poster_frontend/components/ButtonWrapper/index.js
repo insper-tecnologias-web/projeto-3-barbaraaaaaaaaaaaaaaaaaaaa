@@ -1,28 +1,28 @@
 import Lottie from 'react-lottie'
+import { useState } from 'react'
+
+import animationState from './lottie-heart.json'
 
 
 export default function ButtonWrap (props) {
-  const like = (event) => {
-    const reverseAnimation = -1
-    const normalAnimation = 1
-
-    props.setAnimationState({
-      isStopped: false,
-      direction: props.animationState.direction === normalAnimation ? reverseAnimation : normalAnimation
-    })
-    props.setLikeState(!props.isLiked)
-  }
+  const [teste, setTeste] = useState(false);
 
   return (
-    <button className="botao" onClick={like}>
+    <button className="botao" onClick={() => setTeste(!teste)}>
       <Lottie
-        onClick={like}
-        options={props.defaultOptions}
+        options={{
+          loop: false,
+          autoplay: true, 
+          animationData: animationState,
+            rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice'
+          }
+        }}
         width={400}
         height={400}
-        direction={props.animationState.direction}
-        isStopped={props.animationState.isStopped}
-        isPaused={props.animationState.isPaused}
+        direction={teste ? -1 : 1}
+        isStopped={false}
+        isPaused={false}
       />
     </button>
   )

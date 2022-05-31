@@ -6,3 +6,7 @@
   border: 1px solid #DDD;
   border-radius: 1rem;
 }
+
+.login_form__input{
+  appearance: none;
+}

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Link from 'next/link'
@@ -30,8 +30,13 @@ export default function Home() {
     })
     const { token } = await response.json()
 
-    localStorage.setItem('token', token)
-    rounter.push('./inicial')
+    if (token != "Não tem acesso") {
+      localStorage.setItem('token', token)
+      localStorage.setItem('user', user)
+      rounter.push('./inicial')
+    } else {
+      alert("Senha ou usuário incorretos");
+    }
   }
 
   return (
@@ -61,7 +66,7 @@ export default function Home() {
             <input
               className={style.login_form__input}
               type='text'
-              placeholder="E-mail Insper"
+              placeholder="Usuário"
               value={user}
               onChange={({ target }) => setUser(target.value)}
             />
