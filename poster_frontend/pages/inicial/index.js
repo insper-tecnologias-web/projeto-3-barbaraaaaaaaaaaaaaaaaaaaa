@@ -4,53 +4,47 @@ import { useState, useEffect } from 'react'
 import AppBar from '../../components/AppBar'
 import Note from '../../components/Note'
 
-export default function inicial(props) {
-  const [notes, setNotes] = useState([]); // Remova o array de notes que existia na versão anterior
-  const [access_token, setToken]  = useState('');
 
-  async function verifica () {
-    const response = await fetch('http://localhost:8000/favorita/', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'Authorization': `Token ${access_token}`
-      },
-    })
-    const notes = await response.json()
-    let favoritos= []
-    for (var fav in notes){
-      favoritos.push(notes[fav].id_card);
-    }
-    localStorage.setItem('favoritos', favoritos);
-    console.log("enviouu");
-  }
+export default function inicial(props) {
+  const [notes, setNotes] = useState([]) // Remova o array de notes que existia na versão anterior
+  const [token, setToken] = useState('')
   
-  async function allNotes () {
+  async function fetchNotes () {
     const response = await fetch('http://localhost:8000/api/notes/all/', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-        'Authorization': `Token ${access_token}`
+        'Authorization': `Token ${token}`
       }
     })
     const notes = await response.json()
+
+    const _response = await fetch('http://localhost:8000/favorita/', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': `Token ${token}`
+      },
+    })
+    const likes = await _response.json()
+
+    notes.forEach((note) => {
+      note.likes = likes.some((like) => like.id_card === note.id)
+    })
+
     setNotes(notes)
   }
 
   useEffect(() => {
-    setToken(localStorage.getItem('token'));
+    setToken(localStorage.getItem('token'))
   }, [])
   
   useEffect(() => {
-    if (access_token !== ''){
-      verifica();
-      allNotes();
-    }
-  }, [access_token])
+    if (token !== '') fetchNotes()
+  }, [token])
   
-
   return (
     <>
       <Head>
@@ -61,7 +55,7 @@ export default function inicial(props) {
       <main className="container">
         {
           notes.map((note) => (
-            <Note key={`note__${note.id}`} id= {note.id} title={note.title}>{note.content}</Note>
+            <Note key={`note__${note.id}`} note={note} />
           ))
         }
       </main>
