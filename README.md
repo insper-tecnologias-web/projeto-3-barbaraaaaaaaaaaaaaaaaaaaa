@@ -22,15 +22,17 @@ Funcionalidades:
 Sprint 1 (24/05 e 27/05)
   - [X] Fazer as telas
   - [X] Fazer os fluxos de tela
-  - [ ] Trabalhar no css
+  - [X] Trabalhar no css
 
 Sprint 2 (31/05 e 03/06)
   - [X] Autentização de usuários
+  - [X] CRUD no django dos posts
+  - [X] Favoritar post
+
+Sprint 3 (7/06 e 10/06)
   - [ ] Tags multiplas nos posts
   - [ ] Otimo CSS
-  - [ ] CRUD no django dos posts
   - [ ] CRUD no django dos comentarios
-  - [X] Favoritar post
 
 ![fluxo de telas](https://user-images.githubusercontent.com/71990438/169356552-394c481d-466f-4b10-aba3-6d4236a38586.png)
 
