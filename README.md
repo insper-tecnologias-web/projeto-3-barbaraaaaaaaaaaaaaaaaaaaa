@@ -1,5 +1,7 @@
 # Projeto 3 de Tecnologias Web
 
+## Integrantes: Pedro Andrade, Thiago Kawahara, Willian Kenzo, Luciano Felix
+
 ### Link para o Backend:
 https://github.com/Pedro2712/barbaraaaaaaaaaaaaaaaaa-backend.git
 
@@ -7,8 +9,6 @@ https://github.com/Pedro2712/barbaraaaaaaaaaaaaaaaaa-backend.git
 - npm install -global yarn
 - yarn install
 - npm run dev
-
-Integrantes: Pedro Andrade, Thiago Kawahara, Willian Kenzo
 
 Funcionalidades:
 - Autentização de usuários (2p)
