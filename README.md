@@ -29,6 +29,9 @@ Sprint 1 (24/05 e 27/05)
   - [X] Trabalhar no css
 
 Sprint 2 (31/05 e 03/06)
+```cmd
+  - [X] Autentização de usuários
+```
   - [X] Autentização de usuários
   - [X] CRUD no django dos posts
   - [X] Favoritar post
