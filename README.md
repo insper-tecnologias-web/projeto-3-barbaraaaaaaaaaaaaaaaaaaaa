@@ -6,9 +6,12 @@
 https://github.com/Pedro2712/barbaraaaaaaaaaaaaaaaaa-backend.git
 
 ### Códigos para rodar:
-- npm install -global yarn
-- yarn install
-- npm run dev
+
+```cmd
+npm install -global yarn
+yarn install
+npm run dev
+```
 
 Funcionalidades:
 - Autentização de usuários (2p)
@@ -20,6 +23,7 @@ Funcionalidades:
 - Utilização do frameWork Next
 
 Sprint 1 (24/05 e 27/05)
+
   - [X] Fazer as telas
   - [X] Fazer os fluxos de tela
   - [X] Trabalhar no css
