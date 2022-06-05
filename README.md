@@ -21,6 +21,7 @@ Funcionalidades:
 - Tags multiplas nos posts (1,5p) 
 - CRUD no django dos comentarios (1p)
 - Utilização do frameWork Next
+- Conseguir postar imagens
 
 Sprint 1 (24/05 e 27/05)
 
