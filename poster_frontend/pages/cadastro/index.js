@@ -25,27 +25,14 @@ export default function cadastra() {
 
   const defaultOptions = {
   loop: false,
-  autoplay: false, 
+  autoplay: true, 
   animationData: animationData,
   rendererSettings: {
   preserveAspectRatio: 'xMidYMid slice'
   }
   };
 
-  const like= (event)=>{
-      const reverseAnimation = -1;
-      const normalAnimation = 1;
-
-      setAnimationState({
-          isStopped: false,
-          direction: animationState.direction === normalAnimation 
-          ? reverseAnimation
-          : normalAnimation,
-      })
-  }
-
   async function cadastrar (event) {
-    if (email.endsWith("@al.insper.edu.br")) {
       const response = await fetch('http://localhost:8000/cadastra/', {
           method: 'POST',
           headers: {
@@ -60,24 +47,29 @@ export default function cadastra() {
                 last_name:  last_name
               })
             })
-            .then(() => {
-              localStorage.setItem('user', username);
-              rounter.push('./inicial');
+            .then((response) => {
+              console.log(response.err);
+              if (response.status !== 200){
+                const divMessage = document.querySelector(".alert");
+                let msg = "Preencha todos os campos";
+                
+                if (!email.endsWith('@al.insper.edu.br'))
+                  msg = "Apenas e-mail insper";
+
+                const message = document.createElement("div");
+                message.classList.add(style.message);
+                message.innerText = msg;
+                divMessage.appendChild(message);
+          
+                setTimeout(() => {
+                  message.style.display = "none";
+                }, 3000);
+
+              } else {
+                localStorage.setItem('user', username);
+                rounter.push('./inicial');
+              }
             })
-
-      } else {
-        const divMessage = document.querySelector(".alert");
-        const msg = "Apenas e-mail insper";
-
-        const message = document.createElement("div");
-        message.classList.add(style.message);
-        message.innerText = msg;
-        divMessage.appendChild(message);
-  
-        setTimeout(() => {
-          message.style.display = "none";
-        }, 3000);
-    }
   }
 
   return (

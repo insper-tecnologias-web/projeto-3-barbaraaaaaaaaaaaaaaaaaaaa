@@ -9,7 +9,7 @@ export default function postes(props) {
   const [token, setToken] = useState('')
   
   async function fetchNotes () {
-    const response = await fetch('http://localhost:8000/api/notes/', {
+    const response = await fetch('http://localhost:8000/notes/', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -19,8 +19,6 @@ export default function postes(props) {
     })
     const notes = await response.json()
 
-    console.log(notes)
-
     const _response = await fetch('http://localhost:8000/favorita/', {
       method: 'GET',
       headers: {
@@ -29,9 +27,12 @@ export default function postes(props) {
         'Authorization': `Token ${token}`
       }
     })
+    const likes = await _response.json()
 
-    console.log(await _response.json())
-
+    notes.forEach((note) => {
+      note.likes = likes.some((like) => like.id_card === note.id)
+    })
+    
     setNotes(notes)
   }
 
@@ -56,7 +57,7 @@ export default function postes(props) {
       <main className="container">
         {
           notes.map((note) => (
-            <Note key={`note__${note.id}`} id= {note.id}>{note.content}</Note>
+            <Note key={`note__${note.id}`} note= {note}>{note.content}</Note>
           ))
         }
       </main>

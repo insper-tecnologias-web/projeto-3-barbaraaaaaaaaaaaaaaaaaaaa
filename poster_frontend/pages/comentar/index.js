@@ -6,8 +6,12 @@ import AppBar from '../../components/AppBar';
 export default function comentar(props) {
   const [access_token, setToken] = useState('');
   const [comment, setComment]    = useState('');
-
+  const [imagem, setImagem]      = useState('');
+  
   async function adiciona (event) {
+    const formData = new FormData();
+    formData.append(`${imagem.name.replaceAll(" ", "_")}`, imagem);
+    
     const response = await fetch('http://localhost:8000/adiciona/', {
       method: 'POST',
       headers: {
@@ -16,7 +20,8 @@ export default function comentar(props) {
         'Authorization': `Token ${access_token}`
       },
       body: JSON.stringify({
-        content: comment
+        content: comment,
+        photo:   formData
       })
     })
     setComment('');
@@ -38,6 +43,8 @@ export default function comentar(props) {
         onChange={({ target }) => setComment(target.value)}
         >
         </textarea>
+
+        <input type="file" onChange={e => setImagem(e.target.files[0])}></input>
         <button onClick={adiciona}>Postar</button>
     </>
   )

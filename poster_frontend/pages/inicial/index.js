@@ -10,7 +10,7 @@ export default function inicial(props) {
   const [token, setToken] = useState('')
   
   async function fetchNotes () {
-    const response = await fetch('http://localhost:8000/api/notes/all/', {
+    const response = await fetch('http://localhost:8000/notes/all/', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

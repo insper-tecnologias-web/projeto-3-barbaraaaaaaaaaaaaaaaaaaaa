@@ -22,16 +22,28 @@ export default function Note ({ note }) {
     })
   }
 
+  async function delet (value) {
+    const response = await fetch('http://localhost:8000/notes/' + note.id + '/', {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': `Token ${token}`
+      }
+    })
+  }
+
   useEffect(() => {
     setToken(localStorage.getItem('token'))
   }, [])
-
+  
   return (
     <div className={style.card} >
       <div className={style.imagem}>
         <div>
           <LikeButton like={like} onLike={updateLike} />
         </div>
+        <button onClick={delet}></button>
 
         <h3 className={style.card_title}>{note.categoria}</h3>
       </div>
@@ -39,6 +51,7 @@ export default function Note ({ note }) {
         <div className={style.limitaNome}>
           <h3 className={style.card_contentG}>{note.content}</h3>
         </div>
+          <input type='image'>{note.photo}</input>
       </div>
     </div>
   )
