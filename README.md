@@ -6,9 +6,12 @@
 https://github.com/Pedro2712/barbaraaaaaaaaaaaaaaaaa-backend.git
 
 ### Códigos para rodar:
-- npm install -global yarn
-- yarn install
-- npm run dev
+
+```cmd
+npm install -global yarn
+yarn install
+npm run dev
+```
 
 Funcionalidades:
 - Autentização de usuários (2p)
@@ -18,8 +21,10 @@ Funcionalidades:
 - Tags multiplas nos posts (1,5p) 
 - CRUD no django dos comentarios (1p)
 - Utilização do frameWork Next
+- Conseguir postar imagens
 
 Sprint 1 (24/05 e 27/05)
+
   - [X] Fazer as telas
   - [X] Fazer os fluxos de tela
   - [X] Trabalhar no css
@@ -31,6 +36,7 @@ Sprint 2 (31/05 e 03/06)
 
 Sprint 3 (7/06 e 10/06)
   - [ ] Tags multiplas nos posts
+  - [ ] Conseguir postar imagens
   - [ ] Otimo CSS
   - [ ] CRUD no django dos comentarios
 
