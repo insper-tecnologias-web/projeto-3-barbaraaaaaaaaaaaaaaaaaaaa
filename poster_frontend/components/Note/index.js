@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
+import moment from 'moment';
 
 import LikeButton from '../LikeButton'
 import style from './style.module.css'
 
 
 export default function Note ({ note }) {
-  const [token, setToken] = useState('')
-  const like = note.likes
+  const [token, setToken] = useState('');
+  const like = note.likes;
 
   async function updateLike (value) {
     const response = await fetch('http://localhost:8000/favorita/', {
@@ -34,7 +35,7 @@ export default function Note ({ note }) {
   }
 
   useEffect(() => {
-    setToken(localStorage.getItem('token'))
+    setToken(localStorage.getItem('token'));
   }, [])
   
   return (
@@ -42,6 +43,8 @@ export default function Note ({ note }) {
       <div className={style.imagem}>
         <div>
           <LikeButton like={like} onLike={updateLike} />
+        <h3>{moment(note.time).fromNow()}</h3>
+        <h3>Enviado por {note.username}</h3>
         </div>
         <button onClick={delet}></button>
 
@@ -51,7 +54,7 @@ export default function Note ({ note }) {
         <div className={style.limitaNome}>
           <h3 className={style.card_contentG}>{note.content}</h3>
         </div>
-          <input type='image'>{note.photo}</input>
+          {/* <input type='image'>{note.photo}</input> */}
       </div>
     </div>
   )
