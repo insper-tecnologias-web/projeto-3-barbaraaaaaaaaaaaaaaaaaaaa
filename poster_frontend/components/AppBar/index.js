@@ -14,9 +14,9 @@ export default function AppBar(props) {
   return (
     <>
     <div className={styles.appbar}>
-        <img src="logo_getit.png" className={styles.logo} alt="logo"/>
+        <img src="logo_poster.jpg" className={styles.logo} alt="logo"/>
             <div className={styles.bnt}>
-              <Link href='/inicial'>
+              <Link href='/home'>
                 <a>Home</a>
               </Link>
               <Link href='/comentar'>

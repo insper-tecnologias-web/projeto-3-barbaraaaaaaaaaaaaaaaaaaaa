@@ -1,40 +1,43 @@
-import Head from 'next/head';
 import { useEffect, useState } from 'react';
-import moment from 'moment';
+import { useRouter } from 'next/router'
+import Head from 'next/head';
+import axios from 'axios';
 
 import AppBar from '../../components/AppBar';
 
 export default function comentar(props) {
-  const [access_token, setToken] = useState('');
-  const [comment, setComment]    = useState('');
-  const [imagem, setImagem]      = useState('');
+  const router = useRouter()
+  const [access_token, setToken]      = useState('');
+  const [comment, setComment]         = useState('');
+  const [imagem, setImagem]           = useState('');
   const d = new Date();
   let tempo = d.getTime();
   
   async function adiciona (event) {
     const formData = new FormData();
-    formData.append(`${imagem.name.replaceAll(" ", "_")}`, imagem);
+    try{
+      formData.append('myFile', imagem, imagem.name);
+    } catch{
+      formData.append('myFile', null);
+    }
+    formData.append('time', tempo);
+    formData.append('content', comment);
     
-    const response = await fetch('http://localhost:8000/adiciona/', {
-      method: 'POST',
-      headers: {
+    axios
+    .post('http://localhost:8000/adiciona/', formData, {
+        headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
         'Authorization': `Token ${access_token}`
       },
-      body: JSON.stringify({
-        content: comment,
-        photo:   formData,
-        time:  tempo
-      })
     })
-    setComment('');
+    .then(() => router.push('/home'))
   }
 
   useEffect(() => {
     setToken(localStorage.getItem('token'));
   }, [])
-  
+
   return (
     <>
         <Head>
@@ -42,7 +45,6 @@ export default function comentar(props) {
         </Head>
 
         <AppBar></AppBar>
-
         <textarea
         onChange={({ target }) => setComment(target.value)}
         >

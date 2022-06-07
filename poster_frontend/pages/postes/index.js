@@ -31,9 +31,9 @@ export default function postes(props) {
 
     notes.forEach((note) => {
       note.likes = likes.some((like) => like.id_card === note.id)
+      setNotes(notes)
     })
     
-    setNotes(notes)
   }
 
   useEffect(() => {

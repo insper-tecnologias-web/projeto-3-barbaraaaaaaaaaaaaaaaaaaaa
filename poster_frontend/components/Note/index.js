@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import moment from 'moment';
+import Image from 'next/image';
 
 import LikeButton from '../LikeButton'
 import style from './style.module.css'
@@ -54,7 +55,7 @@ export default function Note ({ note }) {
         <div className={style.limitaNome}>
           <h3 className={style.card_contentG}>{note.content}</h3>
         </div>
-          {/* <input type='image'>{note.photo}</input> */}
+          <img alt='photo_test' src={note.photo_url} width={500} height={500}/>
       </div>
     </div>
   )

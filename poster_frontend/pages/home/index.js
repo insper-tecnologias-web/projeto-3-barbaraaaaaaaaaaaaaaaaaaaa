@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import AppBar from '../../components/AppBar'
 import Note from '../../components/Note'
 
-
 export default function inicial(props) {
   const [notes, setNotes] = useState([]) // Remova o array de notes que existia na versão anterior
   const [token, setToken] = useState('')

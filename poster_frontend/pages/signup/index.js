@@ -10,8 +10,8 @@ import InputPassword from '../../components/InputPassword'
 
 
 export default function cadastra() {
-  const rounter = useRouter()
-  const [mail, setMail] = useState('')
+  const router = useRouter()
+  const [email, setMail] = useState('')
   const [user, setUser] = useState('')
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
@@ -26,15 +26,15 @@ export default function cadastra() {
         'Accept': 'application/json',
       },
       body: JSON.stringify({
-        username,
-        email,
-        password,
-        firstName,
-        lastName
+        username: user,
+        email: email,
+        password: pass,
+        first_name: firstName,
+        last_name: lastName
       })
     })
-    .then((response) => {
-      if (response.status !== 200) {
+    const { token } = await response.json()
+      if (token === '') {
         const divMessage = document.querySelector('.alert')
         let msg = 'Preencha todos os campos'
 
@@ -49,11 +49,12 @@ export default function cadastra() {
         divMessage.appendChild(message)
 
         setTimeout(() => message.style.display = 'none', 3000)
+        console.log(msg);
       } else {
-        localStorage.setItem('user', username)
-        rounter.push('./inicial')
+        localStorage.setItem('token', token)
+        localStorage.setItem('user', user)
+        router.push('/home')
       }
-    })
   }
 
   return (
@@ -61,6 +62,10 @@ export default function cadastra() {
       <Head>
         <title>Poster - Cadastrar</title>
       </Head>
+
+      <div className='body'>
+        <div className='alert'></div>
+      </div>
 
       <main className={style.container}>
         <div className={style.hello_animation__wrapper}>
@@ -79,7 +84,7 @@ export default function cadastra() {
               <InputText label="Sobrenome" value={lastName} onInput={({target}) => setLastName(target.value)} />
             </div>
 
-            <InputText label="E-mail Insper" type="email" value={mail} onInput={({target}) => setMail(target.value)} />
+            <InputText label="E-mail Insper" type="email" value={email} onInput={({target}) => setMail(target.value)} />
 
             <InputText label="Usuário" value={user} onInput={({target}) => setUser(target.value)} />
 
