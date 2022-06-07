@@ -24,6 +24,7 @@ Funcionalidades:
 - Conseguir postar imagens
 - No poster vai ter o tempo que passou a postagem e o nome do usuário que postou
 - Animações em botões/eventos
+- Mensagem de alerta customizado caso o usuário ponha a senha ou o nome errado e caso esteja na aba de cadastro a mensagem irá aparecer caso algum campo não esteja   preenchido ou caso não se tenha posto um e-mail insper.
 
 Sprint 1 (24/05 e 27/05)
 
