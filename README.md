@@ -22,6 +22,7 @@ Funcionalidades:
 - CRUD no django dos comentarios (1p)
 - Utilização do frameWork Next
 - Conseguir postar imagens
+- No poster vai ter o tempo que passou a postagem e o nome do usuário que postou
 
 Sprint 1 (24/05 e 27/05)
 
