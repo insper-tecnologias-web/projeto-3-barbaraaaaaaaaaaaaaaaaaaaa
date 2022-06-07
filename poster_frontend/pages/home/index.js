@@ -26,7 +26,7 @@ export default function inicial(props) {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
         'Authorization': `Token ${token}`
-      },
+      }
     })
     const likes = await _response.json()
 

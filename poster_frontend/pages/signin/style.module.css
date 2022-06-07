@@ -1,0 +1,45 @@
+.container {
+  margin: auto;
+  padding: 2rem;
+  width: 100%;
+  max-width: 32rem;
+  border: 1px solid #DDD;
+  border-radius: 1rem;
+}
+
+.page_title {
+  margin: 0;
+  padding: 0;
+  color: #333;
+  font-weight: 400;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.login_form__input{
+  appearance: none;
+}
+
+.login_form__submit_row {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.login_form__button {
+  flex: 0 0 auto;
+  height: 3rem;
+  padding: 0 2rem;
+  border: 1px solid #BBB;
+  border-radius: .5rem;
+  background-color: #FFF;
+  font-family: inherit;
+  font-size: .9rem;
+  cursor: pointer;
+}
+.login_form__button_primary {
+  border-color: #0AF;
+  box-shadow: 0 0 0 2px #0AF6;
+  color: #0AF;
+  font-weight: 600;
+}

@@ -1,5 +1,10 @@
 :root, #__next {
   min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
