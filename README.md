@@ -37,7 +37,7 @@ Sprint 2 (31/05 e 03/06)
   - [X] CRUD no django dos posts
   - [X] Favoritar post
 
-Sprint 3 (7/06 e 10/06)
+Sprint 3 (7/06 e 14/06)
   - [ ] Tags multiplas nos posts
   - [ ] Conseguir postar imagens
   - [ ] Otimo CSS
