@@ -1,4 +1,4 @@
-.like_button {
+.trash_button {
   width: 1.5rem;
   height: 1.5rem;
   margin: -1rem;
@@ -12,12 +12,12 @@
   align-items: center;
   transition: background-color 256ms;
 }
-.like_button:hover {
+.trash_button:hover {
   background-color: rgba(0, 0, 0, .05);
   cursor: pointer;
 }
 
-.like_button__animation {
+.trash_button__animation {
   margin: -.3rem 0 0 -.1rem;
   position: absolute;
   pointer-events: none;

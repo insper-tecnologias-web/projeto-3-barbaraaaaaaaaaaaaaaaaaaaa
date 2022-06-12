@@ -34,7 +34,7 @@ export default function LikeButton ({className=[], like:_like, onLike, ...props}
   return (
     <button className={[style.like_button, ...className]} onClick={toggleLike} {...props}>
       <div className={style.like_button__animation}>
-        <Lottie {...animationState} />
+        <Lottie { ...animationState } speed={ like ? 2.5 : 2 }/>
       </div>
     </button>
   )

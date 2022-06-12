@@ -49,11 +49,10 @@ export default function cadastra() {
         divMessage.appendChild(message)
 
         setTimeout(() => message.style.display = 'none', 3000)
-        console.log(msg);
       } else {
         localStorage.setItem('token', token)
         localStorage.setItem('user', user)
-        router.push('/home')
+        router.push('/')
       }
   }
 

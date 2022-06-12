@@ -31,7 +31,7 @@ export default function Home() {
     if (token != 'Não tem acesso') {
       localStorage.setItem('token', token)
       localStorage.setItem('user', user)
-      router.push('/home')
+      router.push('/')
     } else {
       alert('Senha ou usuário incorretos')
     }
@@ -60,7 +60,7 @@ export default function Home() {
 
           <div className={style.login_form__submit_row}>
             <Link href="/signup">
-              <button className={style.login_form__button} >Cadastrar</button>
+              <button className={style.login_form__button}>Cadastrar</button>
             </Link>
 
             <button className={[style.login_form__button, style.login_form__button_primary].join(' ')} onClick={submit} type="submit" >Entrar</button>

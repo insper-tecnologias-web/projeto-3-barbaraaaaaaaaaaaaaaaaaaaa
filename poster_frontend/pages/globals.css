@@ -3,16 +3,11 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-}
-
 #__next {
   display: flex;
   flex-direction: column;
+}
+
+::selection {
+  background-color: rgba(245, 158, 11, .6);
 }
